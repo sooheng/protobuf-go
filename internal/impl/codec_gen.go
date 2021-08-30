@@ -4971,9 +4971,9 @@ func consumeStringValidateUTF8(b []byte, p pointer, wtyp protowire.Type, f *code
 	if n < 0 {
 		return out, protowire.ParseError(n)
 	}
-	if !utf8.ValidString(v) {
-		return out, errInvalidUTF8{}
-	}
+	// if !utf8.ValidString(v) {
+	// 	return out, errInvalidUTF8{}
+	// }
 	*p.String() = v
 	out.n = n
 	return out, nil
